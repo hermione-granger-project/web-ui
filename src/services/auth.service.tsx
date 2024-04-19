@@ -19,7 +19,22 @@ export const AuthService = () => {
       });
   };
 
+  const login = (data: { email: string; password: string }) => {
+    // Call API to register user
+    return axios
+      .post("https://members-gi4bxnwssa-uc.a.run.app/v1/members/login", data)
+      .then((response) => {
+        // Set user data in context
+        setUser({
+          email: response.data.email,
+          username: response.data.username,
+          isAuthenticated: true,
+        });
+      });
+  };
+
   return {
     register,
+    login
   };
 };
