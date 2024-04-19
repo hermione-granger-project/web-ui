@@ -24,10 +24,8 @@ const SignUpPage = () => {
       username: formData.username,
       password: hashedPassword,
     }).then(() => {
-      console.log("Polo");
       setIsLoading(false);
     }).catch((error) => {
-      console.log("marco");
       if (error.response.status === 409) {
         setErrorMessage("Duplicate email address error");
       } else {
