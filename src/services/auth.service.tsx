@@ -16,9 +16,6 @@ export const AuthService = () => {
           username: response.data.username,
           isAuthenticated: true,
         });
-      })
-      .catch((error) => {
-        console.error(error);
       });
   };
 
